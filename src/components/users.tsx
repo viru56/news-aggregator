@@ -10,6 +10,7 @@ import { fetchUsers } from '../store/users';
 const LoadingMessage = () => {
   return <Typography component="p" variant='body1' sx={{ textAlign: 'center', p: 2 }}>Loading...</Typography>
 }
+// show error mesage or show no more user in the end
 const EndMessage = ({message}: {message: string}) => {
   return (
     <Typography component="p" variant='body1' sx={{ textAlign: 'center', p: 2 }}>
@@ -27,9 +28,11 @@ export default function Users() {
   }
 
   useEffect(() => {
+    // hide loader after 3 seconds
     setTimeout(() => {
       setShowLoader(false);
     }, 3000)
+    // get all users
     dispatch(fetchUsers());
   }, [dispatch]);
 
