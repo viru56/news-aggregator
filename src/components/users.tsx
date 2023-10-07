@@ -52,8 +52,8 @@ export default function Users() {
         endMessage={<EndMessage message={usersState.error} />}
       >
 
-        {usersState.data?.map((user, index) => (
-          <Box component="div" key={index}>
+        {usersState.data?.map((user) => (
+          <Box component="div" key={user.id}>
             <User user={user} />
             <Divider sx={{ marginLeft: 3 }} />
           </Box>
