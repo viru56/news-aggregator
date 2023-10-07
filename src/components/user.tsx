@@ -1,13 +1,8 @@
 import Avatar from '@mui/material/Avatar';
 import { Grid, Typography } from '@mui/material';
+import { UserType } from '../types/user.type';
 
-type User = {
-  id: number,
-  first_name: string;
-  last_name: string;
-  avatar: string;
-}
-export default function User({user}:{user:User}) {
+export default function User({user}:{user:UserType}) {
   return (
     <Grid container alignItems="center" spacing={{md: 6, sm: 3, xs: 2}} sx={{p:4}}>
     <Grid item>
