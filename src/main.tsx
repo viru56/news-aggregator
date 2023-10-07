@@ -7,8 +7,6 @@ import theme from './theme';
 import { Provider } from 'react-redux';
 import { store } from './store';
 
-// 642
-
 // StrictMode renders components twice (on dev but not production) in order to detect any problems with your code and warn you about them.
 // disable the Strict mode so it won't make api call twice on intial load
 ReactDOM.createRoot(document.getElementById('root')!).render(
