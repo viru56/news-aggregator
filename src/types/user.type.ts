@@ -1,9 +1,9 @@
 export type UserType = {
-  id: number,
+  id: number;
   first_name: string;
   last_name: string;
   avatar: string;
-}
+};
 
 export type UserStateType = {
   data: Array<UserType>;
@@ -14,4 +14,4 @@ export type UserStateType = {
   loading: boolean;
   error: string;
   hasMore: boolean;
-}
+};

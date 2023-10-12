@@ -8,38 +8,40 @@ import { useAppSelector, useAppDispatch } from '../store/hooks';
 import { fetchUsers } from '../store/users';
 
 const LoadingMessage = () => {
-  return <Typography component="p" variant='body1' sx={{ textAlign: 'center', p: 2 }}>Loading...</Typography>
-}
-// show error mesage or show no more user in the end
-const EndMessage = ({message}: {message: string}) => {
   return (
-    <Typography component="p" variant='body1' sx={{ textAlign: 'center', p: 2 }}>
+    <Typography component="p" variant="body1" sx={{ textAlign: 'center', p: 2 }}>
+      Loading...
+    </Typography>
+  );
+};
+// show error mesage or show no more user in the end
+const EndMessage = ({ message }: { message: string }) => {
+  return (
+    <Typography component="p" variant="body1" sx={{ textAlign: 'center', p: 2 }}>
       {message ? message : 'No More Users'}
     </Typography>
-  )
-}
+  );
+};
 export default function Users() {
   const dispatch = useAppDispatch();
-  const usersState = useAppSelector(state=> state.users);
-   const [showLoader, setShowLoader] = useState(true);
+  const usersState = useAppSelector((state) => state.users);
+  const [showLoader, setShowLoader] = useState(true);
 
-   const getUsers = () => {
+  const getUsers = () => {
     dispatch(fetchUsers());
-  }
+  };
 
   useEffect(() => {
     // hide loader after 3 seconds
     setTimeout(() => {
       setShowLoader(false);
-    }, 3000)
+    }, 3000);
     // get all users
     dispatch(fetchUsers());
   }, [dispatch]);
 
   if (showLoader) {
-    return (
-     <Loader />
-    )
+    return <Loader />;
   }
   return (
     <>
@@ -51,7 +53,6 @@ export default function Users() {
         loader={<LoadingMessage />}
         endMessage={<EndMessage message={usersState.error} />}
       >
-
         {usersState.data?.map((user) => (
           <Box component="div" key={user.id}>
             <User user={user} />
