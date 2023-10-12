@@ -40,10 +40,9 @@ export default function Users() {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  if (showLoader) {
-    return <Loader />;
-  }
-  return (
+  return showLoader ? (
+    <Loader />
+  ) : (
     <>
       <Header />
       <InfiniteScroll
