@@ -2,6 +2,8 @@
 
 This is a test project 
 
+### Create a .env file and add your project keys.  You can find the keys in .env.example file.
+
 #### How to run this project locally
 
 ## Installation
@@ -9,8 +11,6 @@ This is a test project
 ```bash
 npm install
 ```
-
-### Create a .env file and add your project keys. you can find the keys in .env.example file
 
 ## Run
 
@@ -22,10 +22,14 @@ npm run dev
 ## How to run project with Docker
 Please make sure you have docker installed
 
-```bash
-
 # Create docker image
+
+```bash
 docker build .  -t news-aggregator
+```
 
 # Run docker 
+
+```bash
 docker run -dp 8080:8080 news-aggregator
+```
