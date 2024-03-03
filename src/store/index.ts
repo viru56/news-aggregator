@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import usersReducer from './users';
+import newsApiReducer from '../components/news-api/newsApiSlice';
+import backdropReducer from '../lib/backdrop/backdropSlice';
 export const store = configureStore({
   reducer: {
-    users: usersReducer,
+    backdrop: backdropReducer,
+    news: newsApiReducer,
   },
 });
 

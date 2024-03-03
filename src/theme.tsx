@@ -5,6 +5,12 @@ const theme = createTheme({
   palette: {
     mode: 'light', // dark|light
   },
+  typography: {
+    button: {
+      textTransform: 'none',
+      fontWeight: 500,
+    },
+  },
 });
 
 export default theme;
